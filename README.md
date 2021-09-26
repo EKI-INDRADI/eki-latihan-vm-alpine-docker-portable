@@ -12,6 +12,9 @@
 
 # NOTE :
 - studi kasus pada install mariadb + phpmyadmin https://github.com/EKI-INDRADI/eki-latihan-docker-phpmyadmin-mariadb
+- example ssh :    root@127.0.0.1 -p 2200
+- example mariadb :   http://127.0.0.1:3400 // localhost:3400
+- example phpmyadmin :   http://127.0.0.1:8888 // localhost:8888
  
 # STEP
 - INSTALL VIRTUALBOX
