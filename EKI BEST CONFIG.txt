@@ -1,0 +1,128 @@
+
+===========================================================
+DOWNLOAD FILE & CONFIG
+
+Download Alphine Linux Virtual https://www.alpinelinux.org/downloads/
+Download Virtualbox https://www.virtualbox.org/wiki/Downloads
+
+PORT FORWARD VIRTUALBOX NETWORK NAT
+
+Host Port -> Guest Port
+2200 -> 22
+3400 -> 3306
+
+===========================================================
+install linux alpinee virtualbox
+
+Name: ALPINE_VIRT_3.14.2.
+Type: Linux 64 (new version)
+Version: ALPINE VIRTTUAL 3.14.2 x86_64 (alpine-virt-3.14.2-x86_64.iso)
+
+
+login : root
+password : <enter>
+
+setup-alpine
+us
+us
+docker-lite
+eth0
+dhcp
+n
+masuk123
+UTC
+none
+f    <<< faster mirror , jangan 1 (default 1)
+openssh
+sda
+sys    <<<< ini bikin boot , / , swap  = otomatis
+y
+
+poweroff
+
+
+virtualbox -> Storage -> controoler:IDE -> removed (remove ISO nya)
+
+===========================================================
+config ssh :
+
+--------rubah password
+sudo passwd root
+masuk123
+--------/rubah password
+
+apk update
+apk add nano
+
+nano /etc/ssh/sshd_config
+PermitRootLogin yes
+service sshd restart
+===========================================================
+apk update
+apk add docker  
+//========= jika error
+-------------CHECK MIRROR FAST ALPINE
+==================GENERATE FILE :
+mkdir -p /home
+nano  /home/fastestmirror
+--
+data=""
+for s in $(wget -qO- http://rsync.alpinelinux.org/alpine/MIRRORS.txt); do
+        t=$(time -f "%E" wget -q $s/MIRRORS.txt -O /dev/null 2>&1)
+        echo "$s was $t"
+        data="$data$t $s\n"
+done
+
+echo "===RESULTS==="
+
+echo -e $data | sort
+==================/GENERATE FILE
+==================RUN COMMAND :
+cd  /home/fastestmirror
+chmod 777 -Rv fastestmirror
+./fastestmirror
+==================/RUN COMMAND
+-------------/CHECK MIRROR FAST ALPINE
+nano /etc/apk/repositories
+
+#/media/cdrom/apks
+http://foobar.turbo.net.id/alpine/v3.14/main
+#http://foobar.turbo.net.id/alpine/v3.14/community
+#http://foobar.turbo.net.id/alpine/edge/main
+#http://foobar.turbo.net.id/alpine/edge/community
+#http://foobar.turbo.net.id/alpine/edge/testing
+
+rubah menjadi :
+#/media/cdrom/apks
+http://foobar.turbo.net.id/alpine/v3.14/main
+http://foobar.turbo.net.id/alpine/v3.14/community
+#http://foobar.turbo.net.id/alpine/edge/main
+#http://foobar.turbo.net.id/alpine/edge/community
+#http://foobar.turbo.net.id/alpine/edge/testing
+
+
+apk update
+apk add docker docker-compose
+rc-update add docker default
+/etc/init.d/docker start
+
+
+docker --version
+Docker version 20.10.7, build f0df35096d5f5e6b559b42c7fde6c65a2909f7c5
+
+docker-compose --version
+docker-compose version 1.28.0, build unknown
+//========= /jika error
+
+//=========  example install MARIADB PHPMYADMIN DOCKER
+https://github.com/EKI-INDRADI/eki-latihan-docker-phpmyadmin-mariadb
+//========= / example install MARIADB PHPMYADMIN DOCKER
+
+Referensi :
+https://www.youtube.com/watch?v=wohtB7uM1dM (tutorial setup)
+https://mirrors.alpinelinux.org/ (mirror alpine)
+https://wiki.alpinelinux.org/wiki/Finding_the_fastest_mirror (FAST MIRROR ALPINE)
+https://techoverflow.net/2021/05/07/how-to-install-docker-docker-compose-on-alpine-linux/ (docker)
+https://github.com/EKI-INDRADI/eki-latihan-docker-phpmyadmin-mariadb
+
+
