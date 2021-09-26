@@ -8,8 +8,9 @@ Download Virtualbox https://www.virtualbox.org/wiki/Downloads
 PORT FORWARD VIRTUALBOX NETWORK NAT
 
 Host Port -> Guest Port
-2200 -> 22
-3400 -> 3306
+SSH 2200 -> 22
+MARIADB 3400 -> 3400 (docker, default 3306)
+PHPMYADMIN 8888 -> 8888 (docker, default 80)
 
 ===========================================================
 install linux alpinee virtualbox

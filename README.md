@@ -8,11 +8,11 @@
 - ALPINE + VM VIRTUALBOX FILE + DOCKER = PORTABLE DOCKER (TINGGAL COPY DAN RUNNING VIRTUALBOX DI SEMUA OS SUPPORT)
 - VIRTUALBOX LOCALHOST PORT FORWARD (NAT NETWORK)
 ![EKI_INDRADI](https://github.com/EKI-INDRADI/eki-latihan-vm-alphine-docker-portable/raw/master/NAT_NETWORK.png)
+![EKI_INDRADI](https://github.com/EKI-INDRADI/eki-latihan-vm-alphine-docker-portable/raw/master/NAT_NETWORK_MARIADB_PMA.png)
 
 # NOTE :
-
-
-
+- studi kasus pada install mariadb + phpmyadmin https://github.com/EKI-INDRADI/eki-latihan-docker-phpmyadmin-mariadb
+ 
 # STEP
 - INSTALL VIRTUALBOX
 - INSTALL ALPINE LINUX VIRTUAL
@@ -25,6 +25,10 @@ https://www.youtube.com/watch?v=wohtB7uM1dM (tutorial setup)
 https://mirrors.alpinelinux.org/ (mirror alpine)
 https://wiki.alpinelinux.org/wiki/Finding_the_fastest_mirror (FAST MIRROR ALPINE)
 https://techoverflow.net/2021/05/07/how-to-install-docker-docker-compose-on-alpine-linux/ (docker)
+https://github.com/EKI-INDRADI/eki-latihan-docker-phpmyadmin-mariadb (mariadb + phpmyadmin docker)
+
+
+
 
 # Regards,
 
